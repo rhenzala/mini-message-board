@@ -9,12 +9,12 @@
     <h1>Mini Message Board</h1>
     <a href="/new">Add New Message</a>
     <ul>
-        <% messages.forEach(message => {
+        <% messages.forEach(message => { %>
             <li>
                 <strong><%= message.user %></strong>: <%= message.text %>
                 <span>(<%= message.added.toLocaleString() %>)</span>
             </li>
-        }) %>
+        <% }) %>
     </ul>
 </body>
 </html>
