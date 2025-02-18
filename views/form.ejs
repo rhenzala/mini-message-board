@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/forms.css">
     <title>New Message</title>
 </head>
 <body>
     <h1>New Message</h1>
-    <form action="/new" method="post">
-        <input type="text" name="messageUser" placeholder="Your name">
-        <textarea name="messageText" id="messageText" placeholder="Your message"></textarea>
+    <form action="/new" method="POST">
+        <p>
+            <label for="messageUser">Username:</label>
+            <input type="text" name="messageUser" id="messageUser" placeholder="Your name">
+        </p>
+        <p>
+            <label for="messageText">Message:</label>
+            <textarea name="messageText" id="messageText" placeholder="Your message"></textarea>
+        </p>
         <button type="submit">Submit</button>
     </form>
 </body>
