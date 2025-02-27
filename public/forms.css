@@ -35,6 +35,9 @@ button {
 }
 button:hover{
     cursor: pointer;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px var(--green);
+    transition: 0.3s ease-in;
 }
 form{
     display: flex;
@@ -49,9 +52,17 @@ input, textarea {
     color: var(--green);
     border: 1px solid var(--green);
     outline: none;
+    width: 200px;
 }
 
 form p {
     display: flex;
+    justify-content: space-between;
     gap: 0.75rem;
+}
+li {
+    list-style: none;
+    color: var(--green);
+    font-family: monospace;
+    margin-bottom: 12px;
 }

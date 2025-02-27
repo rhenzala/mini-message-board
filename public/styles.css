@@ -35,8 +35,9 @@ button {
 }
 button:hover{
     cursor: pointer;
-    transition: all 0.25scubic-bezier(0.645,0.045,0.355,1);
     transform: translate(-2px, -2px);
+    box-shadow: 4px 4px var(--green);
+    transition: 0.3s ease-in;
 }
 button a{
     color: var(--green);
