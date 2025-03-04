@@ -11,9 +11,4 @@ app.set("views", path.join(__dirname, "views"));
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
-
-
-
- 
-
-  app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
