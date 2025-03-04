@@ -4,7 +4,7 @@ A simple message board where the user can enter their username and message and p
 ## Technologies Used
 - Express
 - EJS
-- vanilla 
+- CSS
 - PostgreSQL
 - Koyeb
 ## Installation
