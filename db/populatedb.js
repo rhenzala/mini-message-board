@@ -21,22 +21,15 @@ async function main() {
 
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
+    ssl: { rejectUnauthorized: false },
   });
 
-  try {
-    await client.connect();
-    console.log("Connected to database ✅");
-
-    await client.query(SQL);
-    console.log("Database setup complete ✅");
-
-  } catch (error) {
-    console.error("Database error ❌:", error); // <-- Logs full error
-  } finally {
-    await client.end();
-    console.log("Database connection closed ✅");
-  }
+  client.connect()
+  .then(() => {
+    console.log("Connected to DB ✅");
+    return client.end();
+  })
+  .catch(err => console.error("Database error ❌:", err));
 }
 
 main();
