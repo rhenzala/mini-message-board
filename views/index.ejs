@@ -12,7 +12,7 @@
     <ul class="message-board">
         <% messages.forEach(message => { %>
             <li class="message">
-                <strong><%= message.user %></strong>
+                <strong><%= message.username %></strong>
                 <span><%= message.added.toLocaleString() %></span>
                  <p><%= message.text %></p>
             </li>

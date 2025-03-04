@@ -6,7 +6,7 @@ async function getAllMessages() {
 }
 
 async function insertMessage(user, text) {
-  await pool.query("INSERT INTO messages (user, text) VALUES ($1, $2)", [user, text]);
+  await pool.query("INSERT INTO messages (username, text) VALUES ($1, $2)", [user, text]);
 }
 
 module.exports = {

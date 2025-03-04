@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS messages (
   added TIMESTAMP DEFAULT NOW()
 );
 
-INSERT INTO messages (text, user) 
+INSERT INTO messages (text, username) 
 VALUES
   ('Hello from Koyeb!', 'Admin'),
   ('This message is persistent!', 'User')
@@ -28,7 +28,7 @@ async function main() {
   try {
     await client.connect();
     console.log("Connected to DB");
-    
+
     await client.query(SQL);
     console.log("Database seeded successfully");
   } catch (err) {
