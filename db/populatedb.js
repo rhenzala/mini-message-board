@@ -5,7 +5,7 @@ const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
   id SERIAL PRIMARY KEY,
   text TEXT NOT NULL,
-  user VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL,
   added TIMESTAMP DEFAULT NOW()
 );
 
@@ -23,13 +23,20 @@ async function main() {
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false },
   });
+  
 
-  client.connect()
-  .then(() => {
-    console.log("Connected to DB ✅");
-    return client.end();
-  })
-  .catch(err => console.error("Database error ❌:", err));
+  try {
+    await client.connect();
+    console.log("Connected to DB");
+    
+    await client.query(SQL);
+    console.log("Database seeded successfully");
+  } catch (err) {
+    console.error("Database error:", err);
+  } finally {
+    await client.end(); 
+    console.log("Database connection closed");
+  }
 }
 
 main();
